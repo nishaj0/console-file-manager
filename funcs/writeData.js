@@ -1,7 +1,7 @@
 function writeData(dir, fs, path, prompt) {
-   let folderName = prompt("enter folder name");
-   let fileName = prompt("enter file name");
-   let data = prompt("enter data");
+   let folderName = prompt("enter folder name\t");
+   let fileName = prompt("enter file name\t");
+   let data = prompt("enter data\t");
 
    // check and create folder
    if (!fs.existsSync(`./${folderName}`)) {
