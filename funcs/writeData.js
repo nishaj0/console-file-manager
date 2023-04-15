@@ -14,7 +14,7 @@ function writeData(dir, fs, path, prompt) {
    // writing data
    fs.writeFile(path.join(dir, folderName, fileName), data, (err) => {
       if (err) throw err;
-      console.log("data writing completed");
+      console.log(`data write to ${fileName}`);
    });
 }
 

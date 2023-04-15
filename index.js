@@ -7,6 +7,7 @@ const readFolder = require("./readFolder");
 const writeData = require("./funcs/writeData");
 const renameFile = require("./funcs/renameFile");
 const appendData = require("./funcs/appendData");
+const deleteFile = require("./funcs/deleteFile");
 
 const dir = path.join(__dirname, "files");
 
@@ -31,7 +32,7 @@ const fileManager = () => {
       } else if (choice == 3) {
          appendData(dir, fs, path, prompt);
       } else if (choice == 4) {
-         deleteFile();
+         deleteFile(dir, fs, path, prompt);
       } else if (choice == 5) {
          exit();
       } else {

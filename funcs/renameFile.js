@@ -15,7 +15,7 @@ function renameFile(dir, fs, path, prompt) {
       path.join(dir, folderName, newFileName),
       (err) => {
          if (err) throw err;
-         console.log("renaming Completed");
+         console.log(`renamed ${fileName} to ${newFileName}`);
       }
    );
 }
