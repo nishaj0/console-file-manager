@@ -6,8 +6,9 @@ const prompt = require("prompt-sync")({ sigint: true });
 const readFolder = require("./readFolder");
 const writeData = require("./funcs/writeData");
 const renameFile = require("./funcs/renameFile");
+const appendData = require("./funcs/appendData");
 
-const dir = __dirname;
+const dir = path.join(__dirname, "files");
 
 const fileManager = () => {
    try {
@@ -28,7 +29,7 @@ const fileManager = () => {
       } else if (choice == 2) {
          renameFile(dir, fs, path, prompt);
       } else if (choice == 3) {
-         appendData();
+         appendData(dir, fs, path, prompt);
       } else if (choice == 4) {
          deleteFile();
       } else if (choice == 5) {
