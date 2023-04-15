@@ -3,8 +3,8 @@ function renameFile(dir, fs, path, prompt) {
    let fileName = prompt("enter file name\t");
    let newFileName = prompt("enter new file name\t");
 
-   if (!fs.existsSync(`./${folderName}`)) {
-      fs.mkdir(`./${folderName}`, (err) => {
+   if (!fs.existsSync(path.join(dir, folderName))) {
+      fs.mkdir(path.join(dir, folderName), (err) => {
          if (err) throw err;
          console.log(`created ${folderName} folder`);
       });
@@ -20,4 +20,4 @@ function renameFile(dir, fs, path, prompt) {
    );
 }
 
-module.exports = renameFile
+module.exports = renameFile;

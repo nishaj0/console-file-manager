@@ -3,8 +3,8 @@ function appendData (dir, fs, path, prompt){
    let fileName = prompt("enter file name\t");
    let data = prompt("enter data\t");
 
-   if(!fs.existsSync(`./${folderName}`)){
-      fs.mkdir(`./${folderName}`, (err) => {
+   if(!fs.existsSync(path.join(dir, folderName))){
+      fs.mkdir(path.join(dir, folderName), (err) => {
          if (err) throw err
          console.log(`created ${folderName} folder`);
       })

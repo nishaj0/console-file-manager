@@ -1,25 +1,27 @@
 const fs = require("fs");
-const fsPromises = require("fs").promises;
 const path = require("path");
 const prompt = require("prompt-sync")({ sigint: true });
 
-const readFolder = require("./readFolder");
 const writeData = require("./funcs/writeData");
 const renameFile = require("./funcs/renameFile");
 const appendData = require("./funcs/appendData");
 const deleteFile = require("./funcs/deleteFile");
+const readFolder = require("./funcs/readFolder");
+const addFolder = require("./funcs/addFolder");
+const removeFolder = require("./funcs/removeFolder");
 
 const dir = path.join(__dirname, "files");
 
 const fileManager = () => {
    try {
-      // readFolder(dir, fs, path);
-
       console.log(`
    1. Write data in a file
    2. rename file
    3. append data
    4. delete file
+   5.display all folders
+   6.add a folder
+   7.remove folder
    5. exit
    `);
 
@@ -34,7 +36,11 @@ const fileManager = () => {
       } else if (choice == 4) {
          deleteFile(dir, fs, path, prompt);
       } else if (choice == 5) {
-         exit();
+         readFolder(dir, fs, path);
+      } else if (choice == 6) {
+         addFolder(dir, fs, path, prompt);
+      } else if (choice == 7) {
+         removeFolder(dir, fs, path, prompt);
       } else {
          console.log("type correct choice");
       }
