@@ -16,4 +16,4 @@ function readFolder(dir, fs, path) {
    });
 }
 
-module.exports = readFolder
+module.exports = readFolder;
